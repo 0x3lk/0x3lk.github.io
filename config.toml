@@ -1,11 +1,10 @@
 baseURL = "https://0x3lk.github.io/"
-languageCode = "en"
-title = "0x3lk"
 theme = "hugo-ficurinia"
-
+title = "0x3lk"
+languageCode = "en"
 defaultContentLanguage = "en"
-enableRobotsTXT = true
 
+enableRobotsTXT = true
 canonifyURLs = true
 summaryLength = 70
 
@@ -14,6 +13,9 @@ pagerSize = 5
 
 [outputs]
 home = ["HTML", "RSS"]
+section = ["HTML"]
+taxonomy = ["HTML"]
+term = ["HTML"]
 
 [markup]
   [markup.goldmark.renderer]
@@ -28,13 +30,8 @@ home = ["HTML", "RSS"]
 [params]
   description = "Offensive Security research — pentesting, red team, kernel exploitation, reverse engineering."
 
-  showRss = true
-  showTags = true
+  posts = "posts"
   showPostsLink = true
-  articleSummary = true
-
-  enableSearch = true
-  searchbarEverywhere = true
 
   logo = "/logo.svg"
   favicon = "/favicon.png"
@@ -42,9 +39,16 @@ home = ["HTML", "RSS"]
   appletouch = "/apple-touch-icon.png"
   icon512 = "/icon512.png"
 
+  showTags = true
+  showRss = false
+
+  articleSummary = true
   fontFamily = "JetBrains Mono"
   titleFontFamily = "JetBrains Mono"
   monospaceFontFamily = "JetBrains Mono"
+
+  enableSearch = true
+  searchbarEverywhere = true
 
   [params.author]
     name = "0x3lk"
