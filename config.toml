@@ -1,52 +1,70 @@
-baseURL = "http://localhost:1313/"
-theme = "hugo-ficurinia"
-title = "0x3lk"
+baseURL = "https://0x3lk.github.io/"
 languageCode = "en"
-defaultContentLanguage = "en"
+title = "0x3lk"
+theme = "hugo-ficurinia"
 
+defaultContentLanguage = "en"
+enableRobotsTXT = true
+
+canonifyURLs = true
 summaryLength = 70
 
-[markup]
-    [markup.goldmark.renderer]
-        unsafe = true
-    [markup.goldmark.extensions.passthrough]
-        enable = true
-        [markup.goldmark.extensions.passthrough.delimiters]
-            block  = [['$$', '$$']]
-            inline = [['$', '$']]
-
 [pagination]
-    pagerSize = 5
+pagerSize = 5
+
+[outputs]
+home = ["HTML", "RSS"]
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+
+  [markup.goldmark.extensions.passthrough]
+    enable = true
+    [markup.goldmark.extensions.passthrough.delimiters]
+      block  = [['$$', '$$']]
+      inline = [['$', '$']]
 
 [params]
-    [params.author]
-        name = "0x3lk"
-        email = "oussamaeuler@gmail.com"
-    description = "Offensive Security research — pentesting, red team, kernel exploitation, reverse engineering."
+  description = "Offensive Security research — pentesting, red team, kernel exploitation, reverse engineering."
 
-    posts = "posts"
-    showPostsLink = true
+  showRss = true
+  showTags = true
+  showPostsLink = true
+  articleSummary = true
 
-    logo = "/logo.svg"
-    favicon = "/favicon.png"
-    faviconIco = "/favicon.ico"
-    appletouch = "/apple-touch-icon.png"
-    icon512 = "/icon512.png"
+  enableSearch = true
+  searchbarEverywhere = true
 
-    showTags = true
-    showRss = false
+  logo = "/logo.svg"
+  favicon = "/favicon.png"
+  faviconIco = "/favicon.ico"
+  appletouch = "/apple-touch-icon.png"
+  icon512 = "/icon512.png"
 
-    articleSummary = true
-    fontFamily = "JetBrains Mono"
-    titleFontFamily = "JetBrains Mono"
-    monospaceFontFamily = "JetBrains Mono"
+  fontFamily = "JetBrains Mono"
+  titleFontFamily = "JetBrains Mono"
+  monospaceFontFamily = "JetBrains Mono"
 
-    enableSearch = true
-    searchbarEverywhere = true
+  [params.author]
+    name = "0x3lk"
+    email = "oussamaeuler@gmail.com"
 
 [menu]
-    [[menu.main]]
-        identifier = "about"
-        name = "About"
-        url = "/about/"
-        weight = 10
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    identifier = "posts"
+    name = "Posts"
+    url = "/posts/"
+    weight = 2
+
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 3
