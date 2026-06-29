@@ -6,6 +6,7 @@ defaultContentLanguage = "en"
 
 enableRobotsTXT = true
 canonifyURLs = true
+
 summaryLength = 70
 
 [pagination]
@@ -33,16 +34,10 @@ term = ["HTML"]
   posts = "posts"
   showPostsLink = true
 
-  logo = "/logo.svg"
-  favicon = "/favicon.png"
-  faviconIco = "/favicon.ico"
-  appletouch = "/apple-touch-icon.png"
-  icon512 = "/icon512.png"
-
   showTags = true
-  showRss = false
-
+  showRss = true
   articleSummary = true
+
   fontFamily = "JetBrains Mono"
   titleFontFamily = "JetBrains Mono"
   monospaceFontFamily = "JetBrains Mono"
@@ -54,21 +49,11 @@ term = ["HTML"]
     name = "0x3lk"
     email = "oussamaeuler@gmail.com"
 
+# Home, Posts and Tags links are added automatically by the Ficurinia theme
+# (via showPostsLink / showTags). Only declare extra links here, e.g. About.
 [menu]
-  [[menu.main]]
-    identifier = "home"
-    name = "Home"
-    url = "/"
-    weight = 1
-
-  [[menu.main]]
-    identifier = "posts"
-    name = "Posts"
-    url = "/posts/"
-    weight = 2
-
   [[menu.main]]
     identifier = "about"
     name = "About"
     url = "/about/"
-    weight = 3
+    weight = 1
