@@ -1,0 +1,71 @@
+<style>
+/* Make the `0x3lk` code-styled heading render at full heading size */
+.single h1 code,
+article h1 code {
+    font-size: 1.4em;
+    padding: 0.05em 0.3em;
+    letter-spacing: 0.03em;
+}
+
+/* Light theme override via data-theme attribute */
+[data-theme="light"] {
+    --default_bg:         var(--light_bg);
+    --default_hl_bg:      var(--light_hl_bg);
+    --default_fg:         var(--light_fg);
+    --default_dim_fg:     var(--light_dim_fg);
+    --default_stroke:     var(--light_stroke);
+    --default_accent:     var(--light_accent);
+    --default_sidebar_bg: var(--light_sidebar_bg);
+    --default_sidebar_fg: var(--light_sidebar_fg);
+}
+
+[data-theme="dark"] {
+    --default_bg:         var(--dark_bg);
+    --default_hl_bg:      var(--dark_hl_bg);
+    --default_fg:         var(--dark_fg);
+    --default_dim_fg:     var(--dark_dim_fg);
+    --default_stroke:     var(--dark_stroke);
+    --default_accent:     var(--dark_accent);
+    --default_sidebar_bg: var(--dark_sidebar_bg);
+    --default_sidebar_fg: var(--dark_sidebar_fg);
+}
+
+/* Toggle button */
+#theme-toggle {
+    background: none;
+    border: 1.5px solid var(--default_stroke);
+    color: var(--default_fg);
+    border-radius: 6px;
+    padding: 4px 10px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.85em;
+    line-height: 1.4;
+    transition: border-color 0.2s, color 0.2s;
+    align-self: center;
+    margin-left: 12px;
+}
+
+#theme-toggle:hover {
+    border-color: var(--default_accent);
+    color: var(--default_accent);
+}
+</style>
+
+<script>
+(function() {
+    var saved = localStorage.getItem('theme');
+    if (saved) document.documentElement.setAttribute('data-theme', saved);
+})();
+</script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+        delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false}
+        ],
+        throwOnError: false
+    });"></script>

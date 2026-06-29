@@ -1,0 +1,18 @@
+<button id="theme-toggle" onclick="toggleTheme()" title="Toggle dark/light mode">🌙</button>
+
+<script>
+function toggleTheme() {
+    var current = document.documentElement.getAttribute('data-theme');
+    var next = (current === 'light') ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    document.getElementById('theme-toggle').textContent = (next === 'light') ? '🌙' : '☀️';
+}
+
+(function() {
+    var saved = localStorage.getItem('theme');
+    var icon = saved === 'light' ? '🌙' : '☀️';
+    var btn = document.getElementById('theme-toggle');
+    if (btn) btn.textContent = icon;
+})();
+</script>
